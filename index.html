@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caplya💧</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div {
+            border: 2px solid black;
+            margin: 50px;
+        }
+
+        #circle0 {
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+        }
+
+        #circle1 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle2 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        #circle3 {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+
+        #circle4 {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+        }
+
+        #circle5 {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+        }
+
+        .white {
+            background-color: white;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .orange {
+            background-color: orange;
+            z-index: 1;
+        }
+
+        button {
+            margin: 10px;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+        }
+        p{
+            margin: 0 10px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="white" id="circle5">
+        <div class="white" id="circle4">
+            <div class="white" id="circle3">
+                <div class="white" id="circle2">
+                    <div class="white" id="circle1">
+                        <div class="white" id="circle0">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="wave('red')">Ref </button>
+        <p>Blue </p>
+        <p>Green </p>
+        <p>Yellow </p>
+        <button onclick="wave('orange')">Orange </button>
+    </div>
+    <script>
+        /////////////////
+        var c0 = document.getElementById("circle0");
+        var c1 = document.getElementById("circle1");
+        var c2 = document.getElementById("circle2");
+        var c3 = document.getElementById("circle3");
+        var c4 = document.getElementById("circle4");
+        var c5 = document.getElementById("circle5");
+
+        function wave(styleClass) {
+            setTimeout(function () {
+                c0.className = 'white';
+                c0.classList.add(styleClass);
+            }, 0 * 1000);
+            setTimeout(function () {
+                c0.className = 'white';
+                c1.classList.add(styleClass);
+            }, 0.2 * 1000);
+            setTimeout(function () {
+                c1.className = 'white';
+                c2.classList.add(styleClass);
+            }, 0.4 * 1000);
+            setTimeout(function () {
+                c2.className = 'white';
+                c3.classList.add(styleClass);
+            }, 0.6 * 1000);
+            setTimeout(function () {
+                c3.className = 'white';
+                c4.classList.add(styleClass);
+            }, 0.8 * 1000);
+            setTimeout(function () {
+                c4.className = 'white';
+                c5.classList.add(styleClass);
+            }, 1 * 1000);
+            setTimeout(function () {
+                /////////////////////////////////////////
+                    c5.className = 'white';
+                    if (styleClass === 'red') {
+                    setTimeout(function(){
+                    wave('green')}, 0.2*1000);
+                    }   
+                    if (styleClass === 'green') {
+                    setTimeout(function(){
+                    wave('blue')}, 0.2*1000);
+                    }
+                    if (styleClass === 'blue') {
+                    setTimeout(function(){
+                    wave('yellow')}, 0.2*1000);
+                    }
+                    if (styleClass === 'yellow') {
+                    setTimeout(function(){
+                    wave('orange')}, 0.2*1000);
+                    }
+                    if (styleClass === 'orange') {
+                    setTimeout(function(){
+                    wave('red')}, 0.2*1000);
+                    }
+                ///////////////////////////////////////////
+            }, 1.2 * 1000);
+        }
+    </script>
+</body>
+
+</html>
