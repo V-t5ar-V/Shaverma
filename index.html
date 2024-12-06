@@ -50,6 +50,7 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
+            animation: 1s;
         }
 
         .white {
@@ -89,21 +90,25 @@
         }
         .header{
             width: 100%;
-            height: 40px;
-            background-color: rgb(40, 40, 40);
+            height: 70px;
+            background-color: rgb(125, 125, 125);
             display: flex;
+            flex-direction: row;
+            position: fixed;
+        }
+        .but{
+            width: 30px;
+            color: white;
+            margin: 1px;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <div style="width: 30%;"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <header class="header">
+        <h1 style="width: 30%;" class="but">💧Капля💧</h1>
+        <h1 class="but">Вова</h1>
+    </header>
     <div class="white" id="circle5">
         <div class="white" id="circle4">
             <div class="white" id="circle3">
@@ -119,13 +124,12 @@
     </div>
     <div class="buttons">
         <button onclick="wave('red')">Ref </button>
-        <p>Blue </p>
-        <p>Green </p>
-        <p>Yellow </p>
+        <button onclick="wave('blue')">Blue </button>
+        <button onclick="wave('green')">Green </button>
+        <button onclick="wave('yellow')">Yellow </button>
         <button onclick="wave('orange')">Orange </button>
     </div>
     <script>
-        /////////////////
         var c0 = document.getElementById("circle0");
         var c1 = document.getElementById("circle1");
         var c2 = document.getElementById("circle2");
@@ -134,55 +138,41 @@
         var c5 = document.getElementById("circle5");
 
         function wave(styleClass) {
+        let time = prompt("Введите тайм, 1000 = 1 секунда")
             setTimeout(function () {
                 c0.className = 'white';
                 c0.classList.add(styleClass);
-            }, 0 * 1000);
+                c5.style.marginLeft = "50px";
+            }, 0 * time);
             setTimeout(function () {
                 c0.className = 'white';
                 c1.classList.add(styleClass);
-            }, 0.2 * 1000);
+                c5.style.marginLeft = "100px";
+            }, 0.2 * time);
             setTimeout(function () {
                 c1.className = 'white';
                 c2.classList.add(styleClass);
-            }, 0.4 * 1000);
+                c5.style.marginLeft = "150px";
+            }, 0.4 * time);
             setTimeout(function () {
                 c2.className = 'white';
                 c3.classList.add(styleClass);
-            }, 0.6 * 1000);
+                c5.style.marginLeft = "200px";
+            }, 0.6 * time);
             setTimeout(function () {
                 c3.className = 'white';
                 c4.classList.add(styleClass);
-            }, 0.8 * 1000);
+                c5.style.marginLeft = "250px";
+            }, 0.8 * time);
             setTimeout(function () {
                 c4.className = 'white';
                 c5.classList.add(styleClass);
-            }, 1 * 1000);
+                c5.style.marginLeft = "300px";
+            }, 1 * time);
             setTimeout(function () {
-                /////////////////////////////////////////
-                    c5.className = 'white';
-                    if (styleClass === 'red') {
-                    setTimeout(function(){
-                    wave('green')}, 0.2*1000);
-                    }   
-                    if (styleClass === 'green') {
-                    setTimeout(function(){
-                    wave('blue')}, 0.2*1000);
-                    }
-                    if (styleClass === 'blue') {
-                    setTimeout(function(){
-                    wave('yellow')}, 0.2*1000);
-                    }
-                    if (styleClass === 'yellow') {
-                    setTimeout(function(){
-                    wave('orange')}, 0.2*1000);
-                    }
-                    if (styleClass === 'orange') {
-                    setTimeout(function(){
-                    wave('red')}, 0.2*1000);
-                    }
-                ///////////////////////////////////////////
-            }, 1.2 * 1000);
+                c5.className = 'white';
+                c5.style.marginLeft = "0px";
+            }, 1.2 * time);
         }
     </script>
 </body>
